@@ -70,5 +70,16 @@ namespace CarShop.Controllers
 
             return NoContent();
         }
+
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> Delete2(int id)
+        {
+            var deleted = await _carService.DeleteAsync(id);
+
+            if (!deleted)
+                return NotFound();
+
+            return NoContent();
+        }
     }
 }
