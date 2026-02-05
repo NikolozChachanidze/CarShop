@@ -20,6 +20,7 @@ namespace CarShop.Controllers
         public async Task<IActionResult> GetAll()
         {
             var cars = await _carService.GetAllAsync();
+
             return Ok(cars);
         }
 
